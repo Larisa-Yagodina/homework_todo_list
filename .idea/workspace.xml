@@ -10,14 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb86a8af-7f4e-4837-b9fd-baa6c475aee2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Garbage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-    </list>
+    <list default="true" id="eb86a8af-7f4e-4837-b9fd-baa6c475aee2" name="Default Changelist" comment="add Done button" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,8 +55,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601660288411</updated>
-      <workItem from="1601660289940" duration="8087000" />
+      <workItem from="1601660289940" duration="8402000" />
     </task>
+    <task id="LOCAL-00001" summary="add Done">
+      <created>1601672495862</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601672495862</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add Done">
+      <created>1601672513341</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601672513341</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add Done button">
+      <created>1601672608750</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1601672608750</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -79,6 +94,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add Done" />
+    <MESSAGE value="add Done button" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Done button" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1149" height="189" key="GridCell.Tab.0.bottom" timestamp="1601660437004">
@@ -97,5 +117,9 @@
       <screen x="0" y="23" width="1440" height="822" />
     </state>
     <state width="1149" height="189" key="GridCell.Tab.0.right/0.23.1440.822@0.23.1440.822" timestamp="1601660437004" />
+    <state x="205" y="202" key="Vcs.Push.Dialog.v2" timestamp="1601672627983">
+      <screen x="0" y="23" width="1440" height="821" />
+    </state>
+    <state x="205" y="202" key="Vcs.Push.Dialog.v2/0.23.1440.821@0.23.1440.821" timestamp="1601672627983" />
   </component>
 </project>
