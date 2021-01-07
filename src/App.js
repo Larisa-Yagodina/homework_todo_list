@@ -1,82 +1,74 @@
 import React, {useState} from 'react';
 import './App.css';
 import TodoList from "./TodoList";
-import Garbage from "./Garbage";
-import {v4 as uuidv4 } from 'uuid'
-import Controller from "./Controller";
+import CreatTask from "./CreatTask";
+import {v4 as uuidv4} from 'uuid'
 
 
- function App() {
+function App() {
 
-  const [todoList, setTodoList] = useState([
-      {id: 1, title: 'Study 1', task: 'React JS', done: false},
-      {id: 2, title: 'Study 2', task: 'React Project', done: false},
-      {id: 3, title: 'Job 1', task: 'React Job', done: false}
-  ])
+    const [todoList, setTodoList] = useState([
+        {id: 1, task: 'Finish JSP', done: false},
+        {id: 2, task: 'Finish React', done: false},
+        {id: 3, task: 'Start React Project', done: false},
+        {id: 4, task: 'Find Job', done: false},
+    ])
 
-  const [garbage, setGarbage] = useState([]);
+    const lastIndex = todoList.length - 1;
 
-  const intoGarbage = (index, id) => {
-      const current = todoList[index];
-      const newGarbage = [...garbage, current];
-      const newTodo = todoList.filter(el => el.id !== id);
-      setTodoList(newTodo)
-      setGarbage(newGarbage)
-  }
+    const moving = (id, position) => {
+        const newTodo = [...todoList];
+        const index = newTodo.map(el => el.id).indexOf(id);
+        const temp = newTodo[index];
+        newTodo[index] = newTodo[index + position];
+        newTodo[index + position] = temp;
+        setTodoList(newTodo);
+    }
 
-     const lastIndex = todoList.length - 1;
+    const deleteTask = (id) => {
+        if (window.confirm('Are you sure')) {
+            const newTodo = todoList.filter(el => el.id !== id);
+            setTodoList(newTodo)
+        }
+    }
 
-     const moving = (index, position) => {
-       const newTodo = [...todoList];
-       const temp = newTodo[index];
-         newTodo[index] = newTodo[index + position]
-         newTodo[index + position] = temp;
-       setTodoList(newTodo)
-     }
+    const isDone = (id) => {
+        const newList = todoList.map(el => {
+            if (el.id === id) {
+                return {...el, done: !el.done}
+            }
+            return el;
+        })
+        setTodoList(newList)
+    }
 
-     const deleteTask = (id) => {
-         const newTodo = todoList.filter(el => el.id !== id);
-         setTodoList(newTodo)
-     }
+    const addNewTodo = (task) => {
+        const newTodo = [...todoList, {id: uuidv4(), task: task, done: false}];
+        setTodoList(newTodo)
+    }
 
-     const addNewTask = (title, task) => {
-         const newList = [...todoList, {id: uuidv4(), title: title, task: task, done: false}];
-         setTodoList(newList)
-     }
+    return (
+        <div className="App">
+            <h1>To Do list</h1>
+            <CreatTask
+                addNewTodo={addNewTodo}
+            />
+            <hr/>
+            {todoList.map((el, i) =>
+                <TodoList
+                    key={Math.random()}
+                    item={el}
+                    index={i}
+                    moving={moving}
+                    lastIndex={lastIndex}
+                    deleteTask={deleteTask}
+                    isDone={isDone}
+                />)}
+            <hr/>
 
-     const doneTask = (id) => {
-         const newTodo = todoList.map(el => {
-             if (el.id === id) return {...el, done: !el.done};
-             return el;
-         })
-         setTodoList(newTodo)
-     }
 
-  return (
-    <div className="App">
-     <h1>ToDo List</h1>
-        <hr />
-         <Controller addNewTask={addNewTask}/>
-        <hr />
-        {todoList.map((el, i) => <TodoList
-            el={el}
-            index={i}
-            moving={moving}
-            lastIndex={lastIndex}
-            deleteTask={deleteTask}
-            intoGarbage={intoGarbage}
-            doneTask={doneTask}
-        /> )}
-        { !!garbage.length &&
-        <>
-        <hr />
-         <h2> Garbage </h2>
-        {garbage.map(el => <Garbage garbage={el} />)}
-        <hr />
-        </>}
-
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;
